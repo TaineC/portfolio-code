@@ -1,38 +1,579 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,500,800&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css");
+.landing {
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.backgroundImg {
+  position: relative;
+  background-image: url("./img/hexagon_background_3D.png");
+  height: 100vh;
+  max-width: 100%;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.backgroundCover {
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  opacity: 0.6;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hexagon {
+  position: absolute;
+  right: 1em;
+  display: none;
+}
+
+.hexagon1 {
+  top: 21vh;
+}
+
+.hexagon2 {
+  top: 46vh;
+}
+
+.hexagon3 {
+  top: 55vh;
+}
+
+.hexagon4 {
+  top: 67vh;
+}
+
+.hexagon5 {
+  top: 81vh;
+}
+
+.hexagon6 {
+  top: 34vh;
+}
+
+.hexagon7 {
+  top: 13vh;
+}
+
+.hexagon8 {
+  top: 6vh;
+}
+
+.hexagon9 {
+  top: 76vh;
+}
+
+.logo {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-left: auto;
+  margin-right: auto;
+  top: 50%;
+  left: 0;
+  right: 0;
+}
+
+.logo img {
+  position: absolute;
+  height: 60vw;
+  width: 60vw;
+  max-height: 27em;
+  max-width: 27em;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transform: translateY(-60%);
+          transform: translateY(-60%);
+}
+
+.logo .logo-left {
+  left: 0;
+  right: 2.5em;
+}
+
+.logo .logo-right {
+  left: 2.5em;
+  right: 0;
+}
+
+.logoSmall {
+  display: none;
+}
+
+.title {
+  position: absolute;
+  top: 80vh;
+  margin: 1em;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.title a:hover {
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.title h1 {
+  text-align: justify;
+  font-size: 2.5em;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  cursor: pointer;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  color: white;
+  -webkit-text-decoration: underline transparent;
+          text-decoration: underline transparent;
+}
+
+.title h1:hover {
+  font-size: 3.5em;
+  color: #94FF78;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.title h2 {
+  text-align: justify;
+  font-size: 1.9em;
+  font-family: "Montserrat", sans-serif;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.downArrow {
+  position: absolute;
+  top: 85vh;
+  width: 100vw;
+  text-align: center;
+}
+
+.downArrow i {
+  color: white;
+  font-size: 3.5em;
+  cursor: pointer;
+  color: #94FF78;
+}
+
+.mobileNav {
+  position: fixed;
+  z-index: 300;
+}
+
+.fa-cog {
+  font-size: 2.5em;
+  padding: 0.2em;
+}
+
+.mobileNav .btn {
+  background-color: #94FF78 !important;
+  outline: none;
+  margin: 1em;
+  padding: 0.3em 0.5em !important;
+  border-radius: 1em !important;
+  opacity: 0.5;
+}
+
+.mobileNav .btn:hover {
+  opacity: 1;
+}
+
+.mobileNav .btn-::after {
+  display: none;
+}
+
+.mobileNav .fa-cog:hover {
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.mobileNav .dropdown-menu {
+  min-width: 5em !important;
+  background-color: #7DD966;
+}
+
+.mobileNav .link {
+  text-align: center;
+}
+
+.mobileNav .link i {
+  font-size: 2em;
+  padding: 0.3em;
+  color: black;
+}
+
+.mobileNav .link i:active {
+  color: white;
+}
+
+.mobileNav .link:hover {
+  background-color: #94FF78;
+}
+
+.mobileNav .link:hover i {
+  color: white;
+}
+
+.navbar {
+  margin-top: 3em;
+  position: fixed !important;
+  z-index: 200;
+  background-color: #94FF78;
+  opacity: 0.7;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+  display: none !important;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.navbar i {
+  padding: 0.5em 0.1em;
+  font-size: 2em;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+  color: black;
+}
+
+.navbar i:hover {
+  color: white;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+
+.navbar:hover {
+  opacity: 1;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.main {
+  height: 100vh;
+  background-image: url("./img/hexagon_background_3D.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.profileContent {
+  background-color: black;
+  color: white;
+  position: absolute;
+  width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  padding: 1em;
+  font-family: "Montserrat", sans-serif;
+}
+
+.profileContent h1 {
+  opacity: 1;
+  padding: 1em;
+  font-weight: 800;
+}
+
+.profileContent h4 {
+  text-align: center;
+  font-size: 1.2em;
+  padding: 0.4em;
+  font-weight: 500;
+}
+
+.profileContent p {
+  text-align: justify;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 55em) {
+  .profileContent {
+    height: 100vh;
   }
 }
+
+.project:nth-child(2n+1) {
+  background-color: #ddd;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2em;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.project {
+  padding: 1em;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  padding: 1em;
+  text-align: justify;
+}
+
+.mockup {
+  margin: 0 auto 1.5em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mockup img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 90vw !important;
+}
+
+.mockup a {
+  position: absolute;
+  right: 0;
+  padding-right: 1em;
+}
+
+.info {
+  max-width: 45em;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info p {
+  padding: 0 2em;
+}
+
+.projectbuttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1em;
+}
+
+.projectbuttons .btn-primary {
+  margin: 0 1em;
+  padding: 0.7em 2em;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  background-color: #94FF78;
+  border: #94FF78;
+  color: black;
+  -webkit-box-shadow: 0 0.5em 0.5em #B5B5B5;
+          box-shadow: 0 0.5em 0.5em #B5B5B5;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.projectbuttons .btn-primary:hover {
+  background-color: #7DD966;
+  -webkit-box-shadow: 0 0.1em 0.4em grey;
+          box-shadow: 0 0.1em 0.4em grey;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.projectInfo {
+  padding: 1.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.projectInfo h3 {
+  text-align: center;
+  padding-top: 1.5em;
+}
+
+.projectInfo p {
+  text-align: justify;
+  padding: 2em;
+}
+
+.detailsContent p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+.summary {
+  background-color: #eee;
+  padding: 1em;
+}
+
+.summary p {
+  text-align: justify;
+  width: 85%;
+  margin: auto;
+}
+
+.gitButton {
+  padding-left: 0.6em;
+}
+
+.footer {
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer i {
+  color: white;
+  font-size: 1.4em;
+  padding: 1em;
+}
+
+.footer i:hover {
+  color: #94FF78;
+}
+
+@media screen and (min-width: 55em) {
+  .mobileNav {
+    display: none;
+  }
+  .navbar {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  .hexagon {
+    display: block;
+  }
+  .profileContent {
+    color: white;
+    position: absolute;
+    width: 60vw;
+    margin: 0 5em;
+  }
+  .logoSmall {
+    display: block;
+  }
+  .logoSmall img {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    margin-left: auto;
+    margin-right: 1em;
+    max-height: 13em;
+    max-width: 13em;
+  }
+  .main {
+    max-height: 100vh;
+  }
+  .profileContent {
+    background-color: rgba(40, 40, 40, 0.8);
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    padding: 1em;
+  }
+  .profileContent h1 {
+    opacity: 1;
+  }
+  .project:nth-child(2n+2) {
+    background-image: url("./img/simplehex.png");
+    z-index: 50;
+    background-repeat: no-repeat;
+    background-position: 99% 95%;
+  }
+  .project:nth-child(2n+2) .content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .project:nth-child(2n+1) {
+    background-image: url("./img/simplehex.png");
+    background-repeat: no-repeat;
+    background-position: 1% 95%;
+  }
+  .project:nth-child(2n+1) .content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .mockup {
+    width: 70%;
+  }
+  .mockup img {
+    max-width: 60vw !important;
+  }
+  .projectInfo {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 90%;
+    margin: auto;
+  }
+  .projectInfo p {
+    padding-top: 2em;
+  }
+  .summary p {
+    width: 70%;
+    margin: auto;
+  }
+  .detailsContent hr {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 70em) {
+  .projectInfo {
+    width: 70%;
+  }
+  .logoSmall img {
+    margin-right: 2em;
+    max-height: 18em;
+    max-width: 18em;
+  }
+}
+/*# sourceMappingURL=App.css.map */

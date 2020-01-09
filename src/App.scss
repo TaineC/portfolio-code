@@ -1,0 +1,596 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,500,800&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css');
+
+//variables
+
+//font
+$lightfont: 300;
+$mediumfont: 500;
+$heavyfont: 800;
+
+$mainfont: 'Montserrat', sans-serif;
+
+//color
+$maincolor: #94FF78;
+$secondarycolor: #7DD966;
+$alternatecolor: #f09220;
+
+//mixins
+
+.landing{
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+}
+
+.backgroundImg{
+    position: relative;
+    background-image: url('./img/hexagon_background_3D.png');
+    height: 100vh;
+    max-width: 100%;
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.backgroundCover{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    opacity: 0.6;
+}
+
+.hexagon{
+    position: absolute;
+    right: 1em;
+    display: none;
+}
+
+.hexagon1{
+    top: 21vh;
+}
+
+.hexagon2{
+    top: 46vh;
+}
+
+.hexagon3{
+    top: 55vh;
+}
+
+.hexagon4{
+    top: 67vh;
+}
+
+.hexagon5{
+    top: 81vh;
+}
+
+.hexagon6{
+    top: 34vh;
+}
+
+.hexagon7{
+    top: 13vh;
+}
+
+.hexagon8{
+    top: 6vh;
+}
+
+.hexagon9{
+    top: 76vh;
+}
+
+//logo
+
+.logo{
+    position: absolute;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    left: 0;
+    right: 0;
+
+    img{
+        position: absolute;
+        height: 60vw;
+        width: 60vw;
+        max-height: 27em;
+        max-width: 27em;
+        margin-left: auto;
+        margin-right: auto;
+        transform: translateY(-60%);
+    }
+
+    .logo-left{
+        left: 0;
+        right: 2.5em;
+    }
+
+    .logo-right{
+        left: 2.5em;
+        right: 0;
+    }
+}
+
+.logoSmall{
+    display: none;
+}
+
+//header text
+
+.title{
+    position: absolute;
+    top: 80vh;
+    margin: 1em;
+    color: white;
+
+    a:hover{
+        text-decoration: none;
+    }
+
+    h1{
+        text-align: justify;
+        font-size: 2.5em;
+        font-family: $mainfont;
+        text-transform: uppercase;
+        font-weight: $heavyfont;
+        cursor: pointer;
+        transition: all ease 0.5s;
+        color: white;
+        text-decoration: underline transparent;
+    }
+
+    h1:hover{
+        font-size: 3.5em;
+        color: $maincolor;
+        transition: all ease 0.5s;
+    }
+
+    h2{
+        text-align: justify;
+        font-size: 1.9em;
+        font-family: $mainfont;
+        text-transform: capitalize;
+        font-weight: $mediumfont;
+    }
+}
+
+h1{
+    text-align: center;
+    font-size: 2em;
+    font-family: $mainfont;
+    text-transform: uppercase;
+    font-weight: $heavyfont;
+}
+
+//navigation arrow
+
+.downArrow{
+    position: absolute;
+    top: 85vh;
+    width: 100vw;
+    text-align: center;
+
+    i{
+        color: white;
+        font-size: 3.5em;
+        cursor: pointer;
+        color: $maincolor;
+    }
+}
+
+//buttons
+
+.mobileNav{
+    position: fixed;
+    z-index: 300;
+}
+
+.fa-cog{
+    font-size: 2.5em;
+    padding: 0.2em;
+}
+
+.mobileNav{
+
+    .btn{
+        background-color: $maincolor!important;
+        outline: none;
+        margin: 1em;
+        padding: 0.3em 0.5em!important;
+        border-radius: 1em!important;
+        opacity: 0.5;
+    }
+
+    .btn:hover{
+        opacity: 1;
+    }
+
+    .btn-::after{
+        display: none;
+    }
+
+    .fa-cog:hover{
+        transform: rotate(60deg);
+        transition: all ease 0.5s;
+    }
+
+    .dropdown-menu{
+        min-width: 5em!important;
+        background-color: $secondarycolor;
+    }
+
+    .link{
+        text-align: center;
+
+        i{
+            font-size: 2em;
+            padding: 0.3em;
+            color: black;
+        }
+
+        i:active{
+            color: white;
+        }
+    }
+
+    .link:hover{
+        background-color: $maincolor;
+
+        i{
+            color: white;
+        }
+    }
+}
+
+.navbar{
+    margin-top: 3em;
+    position: fixed!important;
+    z-index: 200;
+    background-color: $maincolor;
+    opacity: 0.7;
+    transition: all ease 0.3s;
+    display: none!important;
+    flex-direction: column;
+
+    i{
+        padding: 0.5em 0.1em;
+        font-size: 2em;
+        transition: all ease 0.3s;
+        color: black;
+    }
+
+    i:hover{
+        color: white;
+        transition: all ease 0.3s;
+        cursor: pointer;
+    }
+}
+
+.navbar:hover{
+    opacity: 1;
+    transition: all ease 0.3s;
+}
+
+//profile
+
+.main{
+    height: 100vh;
+    background-image: url('./img/hexagon_background_3D.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.profileContent{
+    background-color: black;
+    color: white;
+    position: absolute;
+    width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    padding: 1em;
+    font-family: $mainfont;
+
+    h1{
+        opacity: 1;
+        padding: 1em;
+        font-weight: $heavyfont;
+    }
+
+    h4{
+        text-align: center;
+        font-size: 1.2em;
+        padding: 0.4em;
+        font-weight: $mediumfont;
+    }
+
+    p{
+        text-align: justify;
+        font-weight: $lightfont;
+    }
+}
+
+@media screen and (max-width: 55em){
+
+    .profileContent{
+        height: 100vh;
+    }
+}
+
+//project layout
+
+.project:nth-child(2n+1){
+    background-color: #ddd;
+}
+
+h2{
+    text-align: center;
+    font-size: 2em;
+    font-family: $mainfont;
+    text-transform: uppercase;
+    font-weight: $heavyfont;
+}
+
+.project{
+    padding: 1em;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+
+    p{
+        font-family: $mainfont;
+        font-weight: $lightfont;
+        padding: 1em;
+        text-align: justify;
+    }
+}
+
+.mockup{
+    margin: 0 auto 1.5em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90vw!important;
+    }
+
+    a{
+        position: absolute;
+        right: 0;
+        padding-right: 1em;
+    }
+}
+
+.info{
+    max-width: 45em;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+
+    p{
+        padding: 0 2em;
+    }
+}
+
+.projectbuttons{
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+
+    .btn-primary{
+        margin: 0 1em;
+        padding: 0.7em 2em;
+        font-family: $mainfont;
+        cursor: pointer;
+        background-color: $maincolor;
+        border: $maincolor;
+        color: black;
+        box-shadow: 0 0.5em 0.5em #B5B5B5;
+        transition: all ease 0.3s;
+    }
+
+    .btn-primary:hover{
+        background-color: $secondarycolor;
+        box-shadow: 0 0.1em 0.4em grey;
+        transition: all ease 0.3s;
+    }
+}
+
+//individual project write up
+
+.projectInfo{
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+
+    h3{
+        text-align: center;
+        padding-top: 1.5em;
+    }
+
+    p{
+        text-align: justify;
+        padding: 2em;
+    }
+}
+
+.detailsContent{
+
+    p{
+        font-family: $mainfont;
+        font-weight: $lightfont;
+    }
+}
+
+.summary{
+    background-color: #eee;
+    padding: 1em;
+    p{
+        text-align: justify;
+        width: 85%;
+        margin: auto;
+    }
+}
+
+.gitButton{
+    padding-left: 0.6em;
+}
+
+//footer
+
+.footer{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+
+    i{
+        color: white;
+        font-size: 1.4em;
+        padding: 1em;
+    }
+
+    i:hover{
+        color: $maincolor;
+    }
+}
+
+//for large screens
+
+@media screen and (min-width: 55em){
+
+    //landing page
+
+    .mobileNav{
+        display: none;
+    }
+
+    .navbar{
+        display: flex!important;
+    }
+
+    .hexagon{
+        display: block;
+    }
+
+    //profile
+
+    .profileContent{
+        color: white;
+        position: absolute;
+        width: 60vw;
+        margin: 0 5em;
+    }
+
+    .logoSmall{
+        display: block;
+    
+        img{
+            transform: translateY(-50%);
+            margin-left: auto;
+            margin-right: 1em;
+            max-height: 13em;
+            max-width: 13em;
+        }
+    }
+
+    .main{
+        max-height: 100vh;
+    }
+    
+    .profileContent{
+        background-color: rgba(40,40,40,0.8);
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 1em;
+    
+        h1{
+            opacity: 1;
+        }
+    }
+
+    //projects
+
+    .project:nth-child(2n+2){
+        background-image: url('./img/simplehex.png');
+        z-index: 50;
+        background-repeat: no-repeat;
+        background-position: 99% 95%;
+        .content{
+            flex-direction: row-reverse;
+        }
+    }
+
+    .project:nth-child(2n+1){
+        background-image: url('./img/simplehex.png');
+        background-repeat: no-repeat;
+        background-position: 1% 95%;
+        .content{
+            flex-direction: row;
+        }
+    }
+
+    .mockup{
+        width: 70%;
+
+        img{
+            max-width: 60vw!important;
+        }
+    }
+
+    //project page
+
+    .projectInfo{
+        flex-direction: row;
+        width: 90%;
+        margin: auto;
+        p{
+            padding-top: 2em;
+        }
+    }
+
+    .summary{
+        p{
+            width: 70%;
+            margin: auto;
+        }
+    }
+
+    .detailsContent{
+        hr{
+            width: 80%;
+        }
+    }
+
+}
+
+@media screen and (min-width: 70em){
+
+    .projectInfo{
+        width: 70%;
+    }
+
+    .logoSmall{
+    
+        img{
+            margin-right: 2em;
+            max-height: 18em;
+            max-width: 18em;
+        }
+    }
+}
